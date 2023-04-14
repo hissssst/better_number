@@ -1,24 +1,22 @@
 defmodule Number.Mixfile do
   use Mix.Project
 
-  @source_url "https://github.com/hissssst/number"
+  @source_url "https://github.com/hissssst/better_number"
   @version "1.0.0"
 
   def project do
     [
       app: :number,
-      description: "Convert numbers to various string formats, such as currency",
+      description: description(),
       version: @version,
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
-      start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test,
-        "coveralls.travis": :test
       ],
       package: package(),
       deps: deps(),
@@ -34,8 +32,9 @@ defmodule Number.Mixfile do
   defp deps do
     [
       {:decimal, "~> 2.0"},
-      {:excoveralls, ">= 0.0.0", only: :test},
+
       {:credo, "~> 1.7", only: :dev},
+      {:excoveralls, ">= 0.0.0", only: :test},
       {:dialyxir, "~> 1.1", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: [:dev, :test]},
       {:inch_ex, ">= 0.0.0", only: [:dev, :test]}
@@ -51,14 +50,19 @@ defmodule Number.Mixfile do
     ]
   end
 
+  defp description do
+    "Convert numbers to various string formats, such as currency"
+  end
+
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE"],
-      maintainers: ["Hissssst"],
+      description: description(),
       licenses: ["MIT"],
+      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE"],
+      maintainers: ["Georgy Sychev"],
       links: %{
-        "Changelog" => "https://hexdocs.pm/better_number/changelog.html",
-        "GitHub" => @source_url
+        Changelog: "https://hexdocs.pm/better_number/changelog.html",
+        GitHub: @source_url
       }
     ]
   end

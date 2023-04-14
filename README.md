@@ -6,9 +6,11 @@ a fork of Daniel Berkompas's Number but it
 
 1. Has slightly more features
 
-2. Does not perform any configuration lookups and therefore each function is __100% pure__
+2. Does not perform any configuration lookups and therefore each function is __100% pure__.
 
-3. Has no `__using__` (why would anyone want to have this?)
+3. Has no `__using__` to import functions
+
+## Example
 
 ```elixir
 alias BetterNumber, as: Number
@@ -45,17 +47,15 @@ Then run `mix deps.get`.
 
 ## Usage
 
-If you want to import all of the functions provided by `BetterNumber`, simply `use`
-it in your module:
 
 ```elixir
 defmodule MyModule do
-  use BetterNumber
+  alias BetterNumber, as: Number
 end
 ```
 
-See the [Hex documentation](http://hexdocs.pm/number/) for more information
+See the [Hex documentation](http://hexdocs.pm/better_number/) for more information
 about the modules provided by `Number`.
 
 ## License
-MIT. See [LICENSE](https://github.com/hissssst/number/blob/master/LICENSE) for more details.
+MIT. See [LICENSE](https://github.com/hissssst/better_number/blob/master/LICENSE) for more details.
