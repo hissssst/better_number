@@ -6,7 +6,7 @@ defmodule Number.Mixfile do
 
   def project do
     [
-      app: :number,
+      app: :better_number,
       description: description(),
       version: @version,
       elixir: "~> 1.0",
