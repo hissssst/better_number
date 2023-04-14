@@ -82,7 +82,7 @@ defmodule BetterNumber.Currency do
       iex> number_to_currency(Decimal.from_float(-100.01), unit: "$", separator: ",", delimiter: ".", negative_format: &"- #{&1} #{&2}")
       "- $ 100,01"
   ]
-  @spec number_to_currency(BetterNumber.t(), Keyword.t() | Map.t()) :: String.t()
+  @spec number_to_currency(BetterNumber.t(), Keyword.t() | map()) :: String.t()
   def number_to_currency(number, options \\ [])
   def number_to_currency(nil, _options), do: nil
 

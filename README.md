@@ -10,6 +10,10 @@ a fork of Daniel Berkompas's Number but it
 
 3. Has no `__using__` to import functions
 
+4. Has correct type specifications
+
+5. Actively maintained
+
 ## Example
 
 ```elixir

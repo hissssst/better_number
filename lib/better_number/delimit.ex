@@ -86,7 +86,7 @@ defmodule BetterNumber.Delimit do
       "123,456.50"
   """
   @spec number_to_delimited(nil, any()) :: nil
-  @spec number_to_delimited(BetterNumber.t(), Keyword.t() | Map.t()) :: String.t()
+  @spec number_to_delimited(BetterNumber.t(), Keyword.t() | map()) :: String.t()
   def number_to_delimited(number, options \\ @defaults)
   def number_to_delimited(nil, _options), do: nil
 

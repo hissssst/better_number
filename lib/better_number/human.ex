@@ -58,7 +58,7 @@ defmodule BetterNumber.Human do
       iex> number_to_human(1234567890123456789, units: ["B", "KB", "MB", "GB", "TB", "PB"])
       "1,234.57 PB"
   """
-  @spec number_to_human(BetterNumber.t(), Map.t() | Keyword.t()) :: String.t()
+  @spec number_to_human(BetterNumber.t(), map() | Keyword.t()) :: String.t()
   def number_to_human(number, options \\ %{})
 
   def number_to_human(%Decimal{} = number, options) do

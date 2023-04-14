@@ -68,7 +68,7 @@ defmodule BetterNumber.Phone do
       iex> BetterNumber.Phone.number_to_phone(1235551234, country_code: 1, extension: 1343, delimiter: ".")
       "+1.123.555.1234 x 1343"
   """
-  @spec number_to_phone(BetterNumber.t(), Keyword.t() | Map.t()) :: String.t()
+  @spec number_to_phone(BetterNumber.t(), Keyword.t() | map()) :: String.t()
   def number_to_phone(number, options \\ @defaults)
   def number_to_phone(nil, _options), do: nil
 

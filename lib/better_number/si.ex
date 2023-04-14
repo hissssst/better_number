@@ -91,7 +91,7 @@ defmodule BetterNumber.SI do
       iex> BetterNumber.SI.number_to_si(Decimal.new(1210000000))
       "1.21G"
   """
-  @spec number_to_si(BetterNumber.t(), Map.t() | Keyword.t()) :: String.t()
+  @spec number_to_si(BetterNumber.t(), map() | Keyword.t()) :: String.t()
   def number_to_si(number, options \\ @defaults)
 
   def number_to_si(number, options) when is_number(number) do
