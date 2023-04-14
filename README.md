@@ -1,8 +1,6 @@
 # Better Number
 
-`BetterNumber` is an [Elixir](https://github.com/elixir-lang/elixir) library which
-provides functions to convert numbers into a variety of different formats. It is
-a fork of Daniel Berkompas's Number but it
+`BetterNumber` is an Elixir library which provides functions to convert numbers into a variety of different formats. It is a fork of [Daniel Berkompas's Number](https://github.com/danielberkompas/number) but it
 
 1. Has slightly more features
 
@@ -42,7 +40,7 @@ Get it from Hex:
 ```elixir
 defp deps do
   [
-    {:better_number, github: "hissssst/better_number"}
+    {:better_number, "~> 1.0.0"}
   ]
 end
 ```
