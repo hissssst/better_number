@@ -12,26 +12,46 @@
 
 5. Actively maintained
 
-## Example
+## Features
+
+* Conversion to currency, where everything is customizable
+
+```
+BetterNumber.to_currency(2034.46)
+"$2,034.46"
+```
+
+* Conversion to international phone format
 
 ```elixir
-alias BetterNumber, as: Number
-
-Number.Currency.number_to_currency(2034.46)
-"$2,034.46"
-
-Number.Phone.number_to_phone(1112223333, area_code: true, country_code: 1)
+BetterNumber.to_phone(1112223333, area_code: true, country_code: 1)
 "+1 (111) 222-3333"
+```
 
-Number.Percentage.number_to_percentage(100, precision: 0)
+* Conversion to percentage
+
+```elixir
+BetterNumber.to_percentage(100, precision: 0)
 "100%"
+```
 
-Number.Human.number_to_human(1234)
+* Conversion to human readable format
+
+```elixir
+BetterNumber.to_human(1234)
 "1.23 Thousand"
+```
 
-Number.Delimit.number_to_delimited(12345678)
+* Just splitting the number with commas
+
+```elixir
+BetterNumber.to_delimited(12345678)
 "12,345,678"
 ```
+
+> Note:
+>
+> Every function is extremely customizable, and has a ton of options
 
 ## Installation
 
@@ -40,7 +60,7 @@ Get it from Hex:
 ```elixir
 defp deps do
   [
-    {:better_number, "~> 1.0.0"}
+    {:better_number, "~> 1.0.1"}
   ]
 end
 ```
@@ -53,11 +73,14 @@ Then run `mix deps.get`.
 ```elixir
 defmodule MyModule do
   alias BetterNumber, as: Number
+
+  ...
 end
 ```
 
 See the [Hex documentation](http://hexdocs.pm/better_number/) for more information
-about the modules provided by `Number`.
+about the modules provided by `BetterNumber`.
 
 ## License
+
 MIT. See [LICENSE](https://github.com/hissssst/better_number/blob/master/LICENSE) for more details.

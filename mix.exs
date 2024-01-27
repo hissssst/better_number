@@ -2,7 +2,7 @@ defmodule Number.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/hissssst/better_number"
-  @version "1.0.0"
+  @version "1.0.1"
 
   def project do
     [
@@ -12,18 +12,11 @@ defmodule Number.Mixfile do
       elixir: "~> 1.0",
       build_embedded: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [
-        coveralls: :test,
-        "coveralls.detail": :test,
-        "coveralls.post": :test,
-        "coveralls.html": :test,
-      ],
       package: package(),
       deps: deps(),
       docs: docs()
     ]
   end
-
 
   def application do
     []
@@ -46,6 +39,7 @@ defmodule Number.Mixfile do
       main: "readme",
       source_url: @source_url,
       source_ref: "v#{@version}",
+      groups_for_modules: groups_for_modules(),
       extras: ["CHANGELOG.md", "README.md"]
     ]
   end
@@ -64,6 +58,25 @@ defmodule Number.Mixfile do
         Changelog: "https://hexdocs.pm/better_number/changelog.html",
         GitHub: @source_url
       }
+    ]
+  end
+
+  defp groups_for_modules do
+    [
+      Main: [
+        BetterNumber
+      ],
+      Specific: [
+        BetterNumber.Delimit,
+        BetterNumber.Currency,
+        BetterNumber.Human,
+        BetterNumber.Percentage,
+        BetterNumber.Phone,
+        BetterNumber.SI
+      ],
+      Protocol: [
+        BetterNumber.Conversion
+      ]
     ]
   end
 end
