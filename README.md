@@ -16,7 +16,7 @@
 
 * Conversion to currency, where everything is customizable
 
-```
+```elixir
 BetterNumber.to_currency(2034.46)
 "$2,034.46"
 ```
